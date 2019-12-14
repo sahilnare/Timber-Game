@@ -13,6 +13,7 @@ using namespace sf;
 void updateBranches(int seed);
 const int NUM_BRANCHES = 6;
 Sprite branches[NUM_BRANCHES];
+
 //Position of the player/branch
 enum class side { LEFT, RIGHT, NONE };
 side branchPositions[NUM_BRANCHES];
@@ -70,6 +71,7 @@ int main()
 	spriteCloud1.setPosition(0, 0);
 	spriteCloud2.setPosition(0, 250);
 	spriteCloud3.setPosition(0, 500);
+	
 	bool cloud1Active = false;
 	bool cloud2Active = false;
 	bool cloud3Active = false;
@@ -132,6 +134,7 @@ int main()
 		textRect.left + textRect.width/2.0f,
 		textRect.top + textRect.height/2.0f
 	);
+	
 	messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
 	scoreText.setPosition(20, 20);
 	highscoreText.setPosition(1150, 20);
@@ -197,11 +200,13 @@ int main()
 	chopBuffer.loadFromFile("sound/chop.wav");
 	Sound chop;
 	chop.setBuffer(chopBuffer);
+	
 	//Death sound
 	SoundBuffer deathBuffer;
 	deathBuffer.loadFromFile("sound/death.wav");
 	Sound death;
 	death.setBuffer(deathBuffer);
+	
 	//Out of time sound
 	SoundBuffer ootBuffer;
 	ootBuffer.loadFromFile("sound/out_of_time.wav");
